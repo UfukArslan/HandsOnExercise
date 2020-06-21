@@ -90,50 +90,8 @@
         </div>
         <div class="card-body">
           <div class="row">
-            <div class="col-8">
-              <div class="alert alert-success">
-                <div class="d-flex align-items-center">
-                  <div class="msg-content flex-grow-1 mr-2">Hi there!</div>
-                  <div>
-                    <small class="text-info">12:57</small>
-                    <button class="btn btn-link btn-sm">
-                      <i class="far fa-trash-alt"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-8 offset-4">
-              <div class="alert alert-warning">
-                <div class="d-flex align-items-center">
-                  <div class="msg-content flex-grow-1 mr-2">
-                    Hey, hello you!<br>
-                    What's up?
-                  </div>
-                  <div>
-                    <small class="text-info">13:05</small>
-                    <button class="btn btn-link btn-sm">
-                      <i class="far fa-trash-alt"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-8">
-              <div class="alert alert-success">
-                <div class="d-flex align-items-center">
-                  <div class="msg-content flex-grow-1 mr-2">
-                    Same old, same old.<br>
-                    Wanna come'n play some SFV?!
-                  </div>
-                  <div>
-                    <small class="text-info">13:16</small>
-                    <button class="btn btn-link btn-sm">
-                      <i class="far fa-trash-alt"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <div class="col-8" *ngFor="let message of messages">
+              <app-message [message]='message'></app-message>
             </div>
           </div>
         </div>
