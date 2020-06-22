@@ -92,7 +92,7 @@
           <div class="row">
             <!-- Directive ngFor + class.offset-4 for indentation -->
             <div class="col-8" *ngFor="let message of messages" [class.offset-4]="message.postedBy === 'me'">
-              <app-message [message]='message'></app-message>
+              <app-message [message]='message' (deleted)="onMessageDeleted($event)"></app-message>
             </div>
           </div>
         </div>

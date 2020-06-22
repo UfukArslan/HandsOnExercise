@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
 import { Message } from './models/message';
+import { reject } from 'lodash';
+
 
 @Component({
   selector: 'app-root',
@@ -20,6 +22,11 @@ export class AppComponent implements OnInit {
       error: (error) => console.log(error)
 
     });
+  }
+//npm install lodash
+// tout les éléments qui n'ont pas été évalués à vrai vont créer un nouveau tableau Message[]
+  onMessageDeleted(deleteMessage: Message): void { 
+    this.messages = reject(this.messages, (message => message.id === deleteMessage.id))
   }
 
 

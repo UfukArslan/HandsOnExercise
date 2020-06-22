@@ -7,7 +7,7 @@
       <div class="msg-content flex-grow-1 mr-2">{{message.content}}</div>
       <div>
         <small class="text-info">{{message.postedAt | date : 'shortTime'}}</small>
-        <button class="btn btn-link btn-sm">
+        <button class="btn btn-link btn-sm" (click)="deleteMsg()">
           <i class="far fa-trash-alt"></i>
         </button>
       </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Message } from 'src/app/models/message';
 
 @Component({
@@ -9,10 +9,15 @@ import { Message } from 'src/app/models/message';
 export class MessageComponent implements OnInit {
 
   @Input() message: Message;
+  @Output() deleted: EventEmitter<Message>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
+    this.deleted = new EventEmitter();
   }
 
+  ngOnInit(): void {}
+
+  deleteMsg(): void {
+    this.deleted.emit(this.message);
+  }
 }
