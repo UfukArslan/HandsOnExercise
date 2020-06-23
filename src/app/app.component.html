@@ -101,7 +101,10 @@
             <div class="form-group">
               <textarea class="form-control text-left"
                 rows="3"
-                placeholder="New message"></textarea>
+                placeholder="New message"
+                [(ngModel)]="newMessage.content"
+                name="message"
+                ></textarea> <!-- to way binding va inscrire le contenu dans la propriété(app.commponent). ici le newMessage est une instance-->
             </div>
             <div class="btn-group btn-group-sm">
               <button class="btn btn-outline-secondary active">
@@ -114,7 +117,7 @@
                 <i class="fas fa-align-right"></i>
               </button>
             </div>
-            <button class="btn btn-success float-right btn-sm">
+            <button (click)="onMessageSend()"class="btn btn-success float-right btn-sm">
               <i class="far fa-paper-plane"></i>
               Send!
             </button>
