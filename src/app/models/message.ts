@@ -12,7 +12,7 @@ export class Message {
         this.alignment = 'left';
         this.content = '';
         this.id = null;
-        this.postedAt = null();
+        this.postedAt = null;
         this.postedBy = 'me';
         this.read = true ;
 
