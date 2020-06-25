@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
-import { Message } from './models/message';
+import { Message, Alignment } from './models/message';
 import { reject } from 'lodash';
 
 
@@ -13,9 +13,12 @@ export class AppComponent implements OnInit {
   title = 'DiaLog';
   messages: Message[];
   newMessage: Message; 
+  selectedAlignement: Alignment;
+  availableAlignments = ['left', 'center', 'right'];
   
   constructor(private api: ApiService){
     this.title = 'Dialog';
+    this.selectedAlignement = 'left';
     this.newMessage = new Message(); //initialiser les propriétés
 
     /** Première option afin de casser le lien avec le to way bindin
@@ -65,6 +68,11 @@ export class AppComponent implements OnInit {
       read: true
     }
   };**/
+
+  changeAlignment(alignment: Alignment): void {
+    this.selectedAlignement = alignment;
+    console.log(event);
+    }
 
 
 }

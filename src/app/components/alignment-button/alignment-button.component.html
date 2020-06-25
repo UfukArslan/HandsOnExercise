@@ -1,0 +1,5 @@
+<button class="btn btn-outline-secondary" 
+    [class.active] = "myAlignment === selectedAlignment" 
+    (click)="sendAlignment()">
+    <i class="fas fa-align-{{ myAlignment }}"></i>
+</button>

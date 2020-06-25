@@ -99,7 +99,7 @@
         <div class="card-footer">
           <form>
             <div class="form-group">
-              <textarea class="form-control text-left"
+              <textarea class="form-control text-{{selectedAlignement}}"
                 rows="3"
                 placeholder="New message"
                 [(ngModel)]="newMessage.content"
@@ -107,15 +107,11 @@
                 ></textarea> <!-- to way binding va inscrire le contenu dans la propriété(app.commponent). ici le newMessage est une instance-->
             </div>
             <div class="btn-group btn-group-sm">
-              <button class="btn btn-outline-secondary active">
-                <i class="fas fa-align-left"></i>
-              </button>
-              <button class="btn btn-outline-secondary">
-                <i class="fas fa-align-center"></i>
-              </button>
-              <button class="btn btn-outline-secondary">
-                <i class="fas fa-align-right"></i>
-              </button>
+              <app-alignment-button *ngFor="let alignment of availableAlignments"
+                  [myAlignment] = "alignment"
+                  [selectedAlignment] = "selectedAlignement"
+                  (selected)= "changeAlignment($event)">
+              </app-alignment-button>
             </div>
             <button (click)="onMessageSend()"class="btn btn-success float-right btn-sm">
               <i class="far fa-paper-plane"></i>
