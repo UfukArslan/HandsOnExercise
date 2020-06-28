@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
 
   onMessageSend(): void {
     this.newMessage.postedAt = new Date ();
+    this.newMessage.alignment = this.selectedAlignement;
     this.messages.push(this.newMessage);
     this.newMessage = new Message();
     
